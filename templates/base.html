@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo de Filmes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        table {
+            width: 100%;
+            background-color: white;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button, .botao {
+            background-color: #2a7de1;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            margin-top: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .vermelho { background-color: #d9342b; }
+        .laranja { background-color: #e08a00; }
+        td form {
+            display: inline;
+            padding: 0;
+            background: none;
+        }
+        td button, td .botao {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">🎬 Catálogo de Filmes</a>
+        <a href="/novo">+ Novo filme</a>
+    </nav>
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+</body>
+</html>

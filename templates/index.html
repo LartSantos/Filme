@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Meus filmes</h1>
+
+{% if filmes %}
+<table>
+    <tr>
+        <th>Título</th>
+        <th>Gênero</th>
+        <th>Ano</th>
+        <th>Nota</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for filme in filmes %}
+    <tr>
+        <td>{{ filme["titulo"] }}</td>
+        <td>{{ filme["genero"] }}</td>
+        <td>{{ filme["ano"] }}</td>
+        <td>{{ filme["nota"] }}</td>
+        <td>
+            <a class="botao laranja" href="/editar/{{ filme['id'] }}">Editar</a>
+
+            <form method="POST" action="/excluir/{{ filme['id'] }}"
+                  onsubmit="return confirm('Quer mesmo excluir este filme?');">
+                <button class="vermelho" type="submit">Excluir</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Você ainda não cadastrou nenhum filme!!-.</p>
+<a class="botao" href="/novo">Cadastrar o primeiro filme</a>
+{% endif %}
+{% endblock %}
